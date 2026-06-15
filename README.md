@@ -1,73 +1,89 @@
-# React + TypeScript + Vite
+# Auth System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto acadêmico de autenticação construído com React, TypeScript e CSS puro.
 
-Currently, two official plugins are available:
+A aplicação possui duas telas principais:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Login
+- Cadastro
 
-## React Compiler
+O foco do projeto é estudar organização de componentes, validações básicas, estados de interface e uma experiência visual mais próxima de produtos SaaS modernos.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- Tela de login com campo de e-mail ou usuário
+- Estado de loading no botão de entrada
+- Toggle de visibilidade da senha
+- Checkbox para lembrar de mim
+- Link de recuperação de senha
+- Acesso visual para cadastro
+- Tela de cadastro com validações de formulário
+- Mensagens de erro amigáveis
+- Toggle de visibilidade para senha e confirmação de senha
+- Aceite de termos e política de privacidade
+- Social login com botões visuais secundários
+- Layout responsivo para desktop, tablet e celular
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tecnologias
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React 19
+- TypeScript
+- Vite
+- CSS puro
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Estrutura
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+src
+├── components
+├── models
+│   └── User.ts
+├── pages
+│   ├── LoginPage.tsx
+│   └── RegisterPage.tsx
+├── routes
+├── services
+│   └── AuthService.ts
+└── styles
+    ├── LoginPage.css
+    └── RegisterPage.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Como executar
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Instale as dependências:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+2. Rode o ambiente de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+3. Gere a build de produção:
+
+```bash
+npm run build
+```
+
+4. Se quiser visualizar a build localmente:
+
+```bash
+npm run preview
+```
+
+## Scripts disponíveis
+
+- `npm run dev` - inicia o servidor de desenvolvimento
+- `npm run build` - compila o projeto para produção
+- `npm run lint` - executa o ESLint
+- `npm run preview` - pré-visualiza a build gerada
+
+## Observações
+
+- A navegação entre login e cadastro está sendo controlada dentro da própria aplicação.
+- O comportamento de autenticação ainda é demonstrativo, sem integração com backend.
+- O projeto foi estruturado para ser fácil de estudar e expandir em aulas ou atividades acadêmicas.
