@@ -1,3 +1,4 @@
+import "./RegisterPage.css";
 export function RegisterPage(){
     return (
        <main>
@@ -11,7 +12,7 @@ export function RegisterPage(){
             <input id="email" type="email" />
 
             <label htmlFor="password">Senha</label>
-            <input type="password" />
+            <input id="password" type="password" />
 
             <label htmlFor="confirmPassword">Confirmar Senha 
             </label>
@@ -25,7 +26,7 @@ export function RegisterPage(){
             </div>
             <button type="submit">Criar conta</button>
         </form>
-        <p>Já possui cont?</p>
+        <p>Já possui conta?</p>
         <a href="#">Entrar</a>
        </main>
     )
